@@ -28,7 +28,7 @@ Bishop et al., 2000 *Preventive Veterinary Medicine* (Blue tongue Culicoides dis
 
 Biting midges are a known vector of VS and some sampling sites have multiple *Culicoides* species present at different abundances. *Culicoides sonorensis* has a pretty wide distribution as environmental generalists in the United States, and their genetic makeup is similar enough to suggest that these populations travel large distances frequently. 
 
-We begin by taking the sampling locations and modeling potential dispersal in summer months (when insects are most active and abundant) over the sampling date period (1980-2020?) at different heights in the atmosphere and different time window aggregates, to generate wind dispersal climatology and determine through which pathways these populations interact. 
+We begin by taking the sampling locations and modeling potential dispersal in summer months (when insects are most active and abundant) over the sampling period (2013-2019) at different heights in the atmosphere and different time window aggregates, to generate wind dispersal climatology and determine through which pathways these populations interact. 
 
 ### Other Notes ###
 Active flight paired with passive dispersal; 
