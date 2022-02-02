@@ -1,0 +1,16 @@
+
+.DS_Store
+.Rproj.user
+.Rhistory
+*.gz
+*.xml
+*.log
+*.fdb_latexmk
+*.fls
+*.blg
+*.bbl
+*.bcf
+*.aux
+*.out
+*.pptx
+*.docx
