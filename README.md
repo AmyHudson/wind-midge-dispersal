@@ -18,14 +18,20 @@ Future Directions:
 Would be valuable to see the infected premises as a layer on this map? Or, more accurately, large enough populations of viable insect vectors? It would also be good to take surface climate into consideration and masking out paths- we know cold fronts can indicate the riding and dropping of these air parcels with 
 
 References:
-Sellers and Maarouf, 1990 Epidemiology and Infection (VSV);
-Sellers and Maarouf, 1991 Canadian journal of veterinary research (Blue tongue);
-Eagles et al., 2014 BMC Veterinary Research (Blue tongue Culicoides dispersal + trajectories HYSPLIT)
-Burgin et al., 2012 Transboundary and Emerging Diseases (Blue tongue Culicoides dispersal + trajectories NAME)
-Bishop et al., 2000 Preventive Veterinary Medicine (Blue tongue Culicoides dispersal + trajectories other models)
+Sellers and Maarouf, 1990 *Epidemiology and Infection* (VSV);
+Sellers and Maarouf, 1991 *Canadian journal of veterinary research* (Blue tongue);
+Eagles et al., 2014 *BMC Veterinary Research* (Blue tongue Culicoides dispersal + trajectories HYSPLIT)
+Burgin et al., 2012 *Transboundary and Emerging Diseases* (Blue tongue Culicoides dispersal + trajectories)
+Bishop et al., 2000 *Preventive Veterinary Medicine* (Blue tongue Culicoides dispersal + trajectories other models)
 
 ## Wind dispersal climatology from sampled vector locations ##
 
 Biting midges are a known vector of VS and some sampling sites have multiple *Culicoides* species present at different abundances. *Culicoides sonorensis* has a pretty wide distribution as environmental generalists in the United States, and their genetic makeup is similar enough to suggest that these populations travel large distances frequently. 
 
-We begin by taking the sampling locations and modeling potential dispersal in summer months (when insects are most active and abundant) over the sampling date period (1980-2020?) at different heights in the atmosphere and different time window aggregates, to generate wind dispersal climatology and determine through which pathways these populations interact.
+We begin by taking the sampling locations and modeling potential dispersal in summer months (when insects are most active and abundant) over the sampling date period (1980-2020?) at different heights in the atmosphere and different time window aggregates, to generate wind dispersal climatology and determine through which pathways these populations interact. 
+
+### Other Notes ###
+Active flight paired with passive dispersal; 
+Handrick et al. 2008 found that there was no long range spread over distances of 300-400km at 850mb.Elevation and terrain roughness can cause air turbulence and drop down of Culicoides and restrict spread. 
+Monsoonal winds (Baker et al. 1990 Simulium spp)
+Braverman and Chechik, 1996
