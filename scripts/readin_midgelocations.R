@@ -17,14 +17,14 @@ trajectory <-
   hysplit_trajectory(
     lat = pts$Lat,
     lon = pts$Long,
-    height = 5,
-    duration = 24,
+    height = 50,
+    duration = 48,
     days = seq(
-      lubridate::ymd("2018-08-22"),
-      lubridate::ymd("2018-08-27"),
+      lubridate::ymd("2018-7-01"),
+      lubridate::ymd("2018-7-30"),
       by = "1 day"
     ),
-    daily_hours = c(0, 6, 12, 18)
+    daily_hours = c(6,21)
   )
 
 #png("figures/midges_wind_5m_24h_")
@@ -33,6 +33,9 @@ trajectory_plot(trajectory)
 
 #https://onlinelibrary.wiley.com/doi/full/10.1002/ece3.1206
 #Particle release height was 50 m to simulate high-altitude insect dispersal, although the release height does not restrict the altitude to which particles may travel, either up or down, along their dispersal trajectories. Particles were allowed to travel for 15 h from a release time of 6:00 (approximate sunrise) until 21:00 (approximate sunset) to mimic the diurnal flying activity of adult wasps. Each trajectory was re-estimated every hour (Figure S1). Trajectories were modeled for departure from each of the study sites for each day in May every year beginning with the year colonization was detected at each site (total of 6014 days modeled at 23 sites; Table S4). 
+
+#U-component wind zonal velocity horizontal wind from west
+#V-component wind meridional velocity vertical wind from south
 
 ##################
 # doesn't work yet
