@@ -25,7 +25,7 @@ Blues indicate wind moving from east to west, reds indicate wind moving west to 
 
 *Is there year to year variability? How would variability influence spread?*
 For example, September 2018 had a lot more wind moving west than other years.
-![](/figures/10m_uwnd_201809.pdf)
+![](/figures/10m_uwnd_201809.jpg)
 
 **References and notes:**
 
