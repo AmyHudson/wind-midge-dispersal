@@ -1,4 +1,4 @@
-# Anywhere the wind blows: exploring the physical wind dispersal of insects #
+# Any way the wind blows: exploring the physical wind dispersal of insects #
 
 Here we explore the potential for the wind dispersal of insects (biting midges in particular) with applications in disease ecology. This includes 1) describing the climatology of [wind dispersal](#wind-dispersal-climatology-from-sampled-vector-locations) events in locations where we have collected different biting midge species and 2) describing the [backwards wind trajectories](#backwards-wind-trajectories) leading up to an anomalous expansion of Vesicular Stomatitis to Kansas in 2020. We leverage the HYSPLIT model through the [splitr](https://rdocumentation.org/packages/SplitR/versions/0.4) package for these analyses, which defaults to the NCEP/NCAR reanalysis product. I also brought in the ERA5 reanalysis product.
 
