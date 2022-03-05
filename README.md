@@ -6,7 +6,7 @@ Here we explore the potential for the wind dispersal of insects (biting midges i
 
 *Culicoides sonorensis* are a known vector of VS and other livestock diseases such as Epizootic Hemorrhagic Disease and Blue Tongue. Some sampling sites have multiple *Culicoides* species present at different abundances. *Culicoides sonorensis* has a pretty wide distribution as environmental generalists in the United States, and their genetic makeup is similar enough to suggest that these populations travel large distances frequently (Shults et al. 2022 *Scientific Reports*). 
 
-We begin by taking cross-continental sampling locations of *Culicoides sonorensis* and modeling potential forward trajectories of air parcels in summer months (when insects are most active and abundant) at different heights in the atmosphere and different time window aggregates, to explore whether wind could be assisting interactions between geographically diverse populations at these known locations. For the summer months in 2018 we explored trajectories where the midges would be in flight at 6am and 9pm, in the air for 3, 6, 12, and 24 hours (rows), and at heights of 10m, 50m, 100m, and 200m (columns).
+We begin by taking cross-continental sampling locations of *Culicoides sonorensis* and modeling potential forward trajectories of air parcels in summer months (when insects are most active and abundant) at different heights in the atmosphere and different time window aggregates, to explore whether wind could be assisting interactions between geographically diverse populations at these known locations. For the summer months in 2018 we explored trajectories where the midges would be in flight at 6am and 9pm, in the air for 3, 6, 12, and 24 hours (rows), and at heights of 10m, 50m, 100m, and 200m (columns). *These are starting heights- the parcels can travel much heigher, so may need to constrain.*
 
 June 
 July 
@@ -58,7 +58,8 @@ It would potentially be valuable to see the infected premises as a layer on this
 
 
 ### Other Notes ###
-Active flight is paired with passive dispersal; flight behavior of C. species may promote dispersal events on top of habitat availability. 
-Handrick et al. 2008 found that there was no long range spread over distances of 300-400km at 850mb. Elevation and terrain roughness can cause air turbulence and drop down of Culicoides and restrict spread. This may be a relevant point considering how we're considering midges mixing on both sides of the Rockies.
-Monsoonal winds can promote insect dispersal- implying a seasonality to dispersal events (Baker et al. 1990 Simulium spp)
-Braverman and Chechik, 1996
+* Active flight is paired with passive dispersal; flight behavior of C. species may promote dispersal events on top of habitat availability. 
+* Handrick et al. 2008 found that there was no long range spread over distances of 300-400km at 850mb. Elevation and terrain roughness can cause air turbulence and drop down of Culicoides and restrict spread. This may be a relevant point considering how we're considering midges mixing on both sides of the Rockies.
+* Monsoonal winds can promote insect dispersal- implying a seasonality to dispersal events (Baker et al. 1990 Simulium spp)
+* Braverman and Chechik, 1996
+* C sonorensis have a 30 day life cycle, with potentially 5-12 generations per year depending on temperature thresholds
