@@ -42,10 +42,7 @@ trajectory_total <- rbind(trajectory_total,trajectory)
   }
 }
 # color by hour along- gradient fill continuous axis
-write.csv(trajectory_total, "trajectory_total.csv", row.names = F)
-#trajectory_color$hgt_color <- 
 
-# calculate euclidean distance of furthest air parcels
 
 
 library(mapview)
@@ -58,6 +55,28 @@ mapshot(trajectory_plot(trajectory),
 
 #U-component wind zonal velocity horizontal wind from west
 #V-component wind meridional velocity vertical wind from south
+
+
+# calculate euclidean distance of furthest air parcels
+# by month? by height? for each run, what is the maximum lat lon distance from lat_i lon_i 
+library(raster)
+
+trajectory_total$eucdistm <- NA
+
+for(i in 1:dim(trajectory_total)[1]){
+  trajectory_total$eucdistm[i] <- pointDistance(
+    c(trajectory_total$lon[i], trajectory_total$lat[i]),
+    c(trajectory_total$lon_i[i], trajectory_total$lat_i[i]),
+    lonlat = T)
+}
+
+#trajectory_total$month <- as.numeric(format(as.Date(trajectory_total$traj_dt), "%m"))
+aggregate(trajectory_total$eucdistm, 
+          by = as.data.frame(trajectory_total$month), 
+          FUN = max)
+
+write.csv(trajectory_total, "data/trajectory_total.csv", row.names = F)
+#trajectory_total <- read.csv("data/trajectory_total.csv")
 
 ##################
 # # doesn't work yet

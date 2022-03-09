@@ -6,24 +6,42 @@ Here we explore the potential for the wind dispersal of insects (biting midges i
 
 *Culicoides sonorensis* are a known vector of VS and other livestock diseases such as Epizootic Hemorrhagic Disease and Blue Tongue. Some sampling sites have multiple *Culicoides* species present at different abundances. *Culicoides sonorensis* has a pretty wide distribution as environmental generalists in the United States, and their genetic makeup is similar enough to suggest that these populations travel large distances frequently (Shults et al. 2022 *Scientific Reports*). 
 
-We begin by taking cross-continental sampling locations of *Culicoides sonorensis* and modeling potential forward trajectories of air parcels in summer months (when insects are most active and abundant) at different heights in the atmosphere and different time window aggregates, to explore whether wind could be assisting interactions between geographically diverse populations at these known locations. For the summer months (June-September) in 2018 we explored trajectories where the midges would be in flight at 6am and 9pm, in the air for 3, 6, 12, and 24 hours (rows), and at heights of 10m, 50m, 100m, and 200m (columns). *These are starting heights- the parcels can travel much heigher, so may need to constrain.*
+We begin by taking cross-continental sampling locations of *Culicoides sonorensis* and modeling potential forward trajectories of air parcels in summer months (when insects are most active and abundant) at different heights in the atmosphere and different time window aggregates, to explore whether wind could be assisting interactions between geographically diverse populations at these known locations. For the summer months (June-September) in 2018 we explored trajectories where the midges would be in flight at 6am and 9pm, in the air for 3, 6, 12, and 24 hours (rows), and at heights of 10m, 50m, 100m, and 200m (columns). *These are starting heights- the parcels can travel much higher, so may need to constrain.* 
 
 ### September 2018 trajectories, where midges fly up to 200m and their location up to 24hrs later ###
 ![](/figures/midges_wind_24h_200m_September.png)
 
-The wind distributions generally match with a novel, MaxEnt-derived spacies distribution model of *C. sonorensis* developed by Melanie and Brian, which we'll add here as a baselayer, with observed locations plotted.
+
+The wind distributions generally match with a novel, MaxEnt-derived spacies distribution model of *C. sonorensis* developed by Melanie and Brian, which we can add here as a baselayer, with observed locations plotted.
+
+All of these runs are now stored in trajectory_total.csv file which we can use for visualizing (need to go beyond default package plot). I've also included a new column 'eucdistm' which measures the euclidean distance in meters from each start point to the progressive movement of the parcel. We can see how maximum distance varies from month to month and/or height to height.
+
+```{r, include = T}
+trajectory_total <- read.csv("data/trajectory_total.csv")
+
+head(trajectory_total)
+
+aggregate(trajectory_total$eucdistm, 
+          by = as.data.frame(trajectory_total$month), 
+          FUN = max)
+```
+
 
 *Are there times of year where wind could help move midges west to east, or east to west?
 How do the times of day influence those wind assists?*
 
-Using another reanalysis product (ERA-5, 1979-present, global) we examined  the climatology of zonal wind (U component, east/west movement) over the period of 2010-2019. I’ve averaged across years and then zonally averaged the windspeed across latitudes to show how as we move across longitudes, and at different points in the atmosphere, this is what east west wind looks like. Y axis is atmosphere levels, surface (1000hPa) to ~2500 meters above sea level (750hPa). 
-The Rockies are around 4,000m at peaks, so should potentially expand up in the atmosphere- but Saunders et al. 1990 mention midges being found at max of 3500m, after which it would likely be too cold. Air parcels could flow around these mountain peaks. Midges could potentially be mixing west and east with seasonal winds flowing west at the surface, and then easily moving east if getting high enough up in atmosphere seasonally.
-![](/figures/era5uwndclimatology.png)
+Using another reanalysis product (ERA-5, 1979-present, global) we examined  the climatology of zonal wind (U component, east/west movement) over the period of 2010-2019 for -124.50E to -92.75E and 35.50N to 45.50N. I’ve averaged across years and then zonally averaged the windspeed across latitude grids to show how, as we move across longitudes at different points in the atmosphere, this is what zonal wind looks like. Y axis is atmosphere levels, surface (1000hPa) to ~2500 meters above sea level (750hPa). Rows are months and columns are times of day from 4am to 9pm.
+The Rockies are around 4,000m at peaks (at around -110E) but Saunders et al. 1990 mention midges being found at max of 3,500m, after which it would likely be too cold. Air parcels could flow around these mountain peaks. 
 Blues indicate wind moving from east to west, reds indicate wind moving west to east, and magnitude is windspeed (m/s).
+Midges could potentially be mixing west and east with seasonal winds flowing west (blue shades) at the surface (e.g. in late spring, early summer), and then easily moving east if getting high enough up in atmosphere in nearly every month. 
 
-*Is there year to year variability? How would variability influence spread?*
-For example, September 2018 had a lot more wind moving west than other years.
+![](/figures/era5uwndclimatology.png)
+
+
+*How would variability influence spread?*
+The white coloring in the above figure may indicate that there is high variability in wind direction over the 10 year time period here. For example, September 2018 had a lot more wind moving west than other years. That variability may promote cross-continental dispersal.
 ![](/figures/10m_uwnd_201809.jpg)
+ 
 
 **References and notes:**
 
