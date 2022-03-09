@@ -21,12 +21,12 @@ aggregate(trajectory_total$eucdistm,
           by = as.data.frame(trajectory_total$month), 
           FUN = max)
 ```
-| Month | Euclidean Distance |
+| Month | Euclidean Distance (m) |
 | ----- | ------------------ |
-| June | 813595.2 |
-| July | 644141.1 |
-| August | 835744.8 |
-| September | 707242.9 |
+| June | 813,595 |
+| July | 644,141 |
+| August | 835,745 |
+| September | 707,243 |
 
 *Are there times of year where wind could help move midges west to east, or east to west?
 How do the times of day influence those wind assists?*
