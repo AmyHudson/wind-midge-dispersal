@@ -69,13 +69,13 @@ for(i in 1:dim(trajectory_total)[1]){
     c(trajectory_total$lon_i[i], trajectory_total$lat_i[i]),
     lonlat = T)
 }
-
+trajectory_total$month <- factor(trajectory_total$month, levels = c("June", "July", "August", "September"))
 #trajectory_total$month <- as.numeric(format(as.Date(trajectory_total$traj_dt), "%m"))
 aggregate(trajectory_total$eucdistm, 
           by = as.data.frame(trajectory_total$month), 
           FUN = max)
 
-write.csv(trajectory_total, "data/trajectory_total.csv", row.names = F)
+#write.csv(trajectory_total, "data/trajectory_total.csv", row.names = F)
 #trajectory_total <- read.csv("data/trajectory_total.csv")
 
 ##################

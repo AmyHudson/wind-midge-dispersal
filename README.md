@@ -16,16 +16,17 @@ The wind distributions generally match with a novel, MaxEnt-derived spacies dist
 
 All of these runs are now stored in trajectory_total.csv file which we can use for visualizing (need to go beyond default package plot). I've also included a new column 'eucdistm' which measures the euclidean distance in meters from each start point to the progressive movement of the parcel. We can see how maximum distance varies from month to month and/or height to height.
 
-```{r, include = T}
-trajectory_total <- read.csv("data/trajectory_total.csv")
-
-head(trajectory_total)
-
+```{r include = T}
 aggregate(trajectory_total$eucdistm, 
           by = as.data.frame(trajectory_total$month), 
           FUN = max)
 ```
-
+| Month | Euclidean Distance |
+| ----- | ------------------ |
+| June | 813595.2 |
+| July | 644141.1 |
+| August | 835744.8 |
+| September | 707242.9 |
 
 *Are there times of year where wind could help move midges west to east, or east to west?
 How do the times of day influence those wind assists?*
