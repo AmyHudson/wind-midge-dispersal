@@ -75,6 +75,7 @@ aggregate(trajectory_total$eucdistm,
           by = as.data.frame(trajectory_total$month), 
           FUN = max)
 
+
 #write.csv(trajectory_total, "data/trajectory_total.csv", row.names = F)
 #trajectory_total <- read.csv("data/trajectory_total.csv")
 
