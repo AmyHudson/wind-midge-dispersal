@@ -80,3 +80,4 @@ It would potentially be valuable to see the infected premises as a layer on this
 * Monsoonal winds can promote insect dispersal- implying a seasonality to dispersal events (Baker et al. 1990 Simulium spp)
 * Braverman and Chechik, 1996
 * C sonorensis have a 30 day life cycle, with potentially 5-12 generations per year depending on temperature thresholds
+* Used [grip](https://github.com/joeyespo/grip) to print this readme.md to pdf- cd to repo, grip, open on chrome, and print as pdf
