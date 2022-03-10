@@ -6,15 +6,14 @@ Here we explore the potential for the wind dispersal of insects (biting midges i
 
 *Culicoides sonorensis* are a known vector of VS and other livestock diseases such as Epizootic Hemorrhagic Disease and Blue Tongue. Some sampling sites have multiple *Culicoides* species present at different abundances. *Culicoides sonorensis* has a pretty wide distribution as environmental generalists in the United States, and their genetic makeup is similar enough to suggest that these populations travel large distances frequently (Shults et al. 2022 *Scientific Reports*). 
 
-We begin by taking cross-continental sampling locations of *Culicoides sonorensis* and modeling potential forward trajectories of air parcels in summer months (when insects are most active and abundant) at different heights in the atmosphere and different time window aggregates, to explore whether wind could be assisting interactions between geographically diverse populations at these known locations. For the summer months (June-September) in 2018 we explored trajectories where the midges would be in flight at 6am and 9pm, in the air for 3, 6, 12, and 24 hours, and at heights of 10m, 50m, 100m, and 200m. *These are starting heights- the parcels can travel much higher, so may need to constrain.* 
+We begin by taking cross-continental sampling locations of *Culicoides sonorensis* and modeling potential forward trajectories of air parcels in summer months (when insects are most active and abundant) at different heights in the atmosphere and different time window aggregates, to explore whether wind could be assisting interactions between geographically diverse populations at these known locations. For the summer months (June-September) in 2018 we explored trajectories where the midges would be in flight at 6am and 9pm, in the air for 3, 6, 12, and 24 hours, and at heights of 10m, 50m, 100m, and 200m. *These are starting heights- the parcels can travel much higher, so may need to constrain.* Temperature is likely the main height constraint and what drives the large variability we see in the observational record of finding midges in the air- there is no temperature output in the splitr package, but I could potentially convert the known height and pressure of the air parcel to temperature, or bring in a temperature data product.
 
 ### September 2018 trajectories, where midges fly up to 200m and their location up to 24hrs later ###
 ![](/figures/midges_wind_24h_200m_September.png)
 
-
 The wind distributions generally match with a novel, MaxEnt-derived spacies distribution model of *C. sonorensis* developed by Melanie and Brian, which we can add here as a baselayer, with observed locations plotted.
 
-All of these runs are now stored in trajectory_total.csv file which we can use for visualizing (need to go beyond default package plot). I've also included a new column 'eucdistm' which measures the euclidean distance in meters from each start point to the progressive movement of the parcel. We can see how maximum distance varies e.g. from month to month and/or height to height.
+All of these runs are now stored in trajectory_total.csv file which we can use for visualizing (need to go beyond default package plot). I've also included a new column 'eucdistm' which measures the euclidean distance in meters from each start point to the progressive movement of the parcel. We can see how maximum distance varies e.g. from month to month. The longer distances usually correspond to time stamps furthest from the initial point (24h) and heighest in the atmosphere (200m).
 
 ```{r include = T}
 aggregate(trajectory_total$eucdistm, 
@@ -60,7 +59,7 @@ Studies examining wind dispersed *Culicoides* and other insects:
 * Eagles et al., 2014 *BMC Veterinary Research* (Blue tongue Culicoides dispersal + trajectories HYSPLIT)
 * Burgin et al., 2012 *Transboundary and Emerging Diseases* (Blue tongue Culicoides dispersal + trajectories)
 * Bishop et al., 2000 *Preventive Veterinary Medicine* (Blue tongue Culicoides dispersal + trajectories other models)
-
+* Review by Lee W. Cohnstaedt and Mark G. Ruder 2013- check refs. Biting midge movement and implications for EHD transmission: How far can a midge travel?
 
 ## Backwards wind trajectories ##
 
