@@ -61,9 +61,9 @@ Studies examining wind dispersed *Culicoides* and other insects:
 * Bishop et al., 2000 *Preventive Veterinary Medicine* (Blue tongue Culicoides dispersal + trajectories other models)
 * Review by Lee W. Cohnstaedt and Mark G. Ruder 2013- check refs. Biting midge movement and implications for EHD transmission: How far can a midge travel?
 
-*Where and when are these observational studies conducted? Is there a pattern of warmer temperatures (e.g. near the equator/ summer) corresponding with higher abundance of midges higher in the atmosphere? Are there thresholds to those heights that may also incorporate a change in midge behavior?
+*Where and when are these observational studies conducted? Is there a pattern of warmer temperatures (e.g. near the equator/ summer) corresponding with higher abundance of midges higher in the atmosphere? Are there thresholds to those heights that may also incorporate a change in midge behavior?*
 
-*Most projected species distribution models of insects only focus on habitat suitability... could we also incorporate projected changes in dispersal that correspond with atmospheric warming throughout the column and wind patterns? Do we know enough about how midges would respond behaviorally to these changes?
+*Most projected species distribution models of insects only focus on habitat suitability... could we also incorporate projected changes in dispersal that correspond with atmospheric warming throughout the column and wind patterns? Do we know enough about how midges would respond behaviorally to these changes?*
 
 ## Backwards wind trajectories ##
 
