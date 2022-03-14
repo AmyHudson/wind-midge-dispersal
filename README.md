@@ -61,6 +61,10 @@ Studies examining wind dispersed *Culicoides* and other insects:
 * Bishop et al., 2000 *Preventive Veterinary Medicine* (Blue tongue Culicoides dispersal + trajectories other models)
 * Review by Lee W. Cohnstaedt and Mark G. Ruder 2013- check refs. Biting midge movement and implications for EHD transmission: How far can a midge travel?
 
+*Where and when are these observational studies conducted? Is there a pattern of warmer temperatures (e.g. near the equator/ summer) corresponding with higher abundance of midges higher in the atmosphere? Are there thresholds to those heights that may also incorporate a change in midge behavior?
+
+*Most projected species distribution models of insects only focus on habitat suitability... could we also incorporate projected changes in dispersal that correspond with atmospheric warming throughout the column and wind patterns? Do we know enough about how midges would respond behaviorally to these changes?
+
 ## Backwards wind trajectories ##
 
 VS infection was reported on June 1 in Kansas. We examined the backwards wind trajectories (from the NCEP reanalysis product) for 6-20 days before the reported VS occurance to account for both a delay in reporting as well as time for an infected vector to bite the animal and the animal to show symptoms. 05/12 (light trajectories) to 05/26 (dark) where every node is the air parcel location every 2 hours up to 120 hours (5 days). We also subset the temperature ≥ 10 °C. We explored at different heights in the atmosphere as identified by previous literature (some based on finding insects at that height).
