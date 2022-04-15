@@ -40,12 +40,13 @@ trajectory$month <- month.name[i]
 trajectory$maxhgt <- hgt[j]
 
 mapshot(trajectory_plot(trajectory), 
-        file = paste("figures/midges_wind_24h_", hgt[j],"m_",month.name[i],".png", sep = ""))
+        file = paste("figures/midges_wind_24h_", hgt[j],"m_",month.name[i],".pdf", sep = ""))
 
 trajectory_total <- rbind(trajectory_total,trajectory)
 
   }
 }
+
 # color by hour along- gradient fill continuous axis
 
 
