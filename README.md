@@ -61,6 +61,13 @@ Studies examining wind dispersed *Culicoides* and other insects:
 * Bishop et al., 2000 *Preventive Veterinary Medicine* (Blue tongue Culicoides dispersal + trajectories other models)
 * Review by Lee W. Cohnstaedt and Mark G. Ruder 2013- check refs. Biting midge movement and implications for EHD transmission: How far can a midge travel?
 
+Other papers to check out: 
+* Ducheyne, E., De Deken, R., Bécu, S., Codina, B., Nomikou, K., Mangana-Vougiaki, O., Georgiev, G., Purse, B., & Hendrickx, G. (2007). Quantifying the wind dispersal of Culicoides species in Greece and Bulgaria. Geospatial Health, 1(2), 177–189. https://doi.org/10.4081/gh.2007.266
+* Jacquet S, Huber K, Pagès N, Talavera S, Burgin LE, Carpenter S, Sanders C, Dicko AH, Djerbal M, Goffredo M, Lhor Y, Lucientes J, Miranda-Chueca MA, Pereira Da Fonseca I, Ramilo DW, Setier-Rio ML, Bouyer J, Chevillon C, Balenghien T, Guis H, Garros C. Range expansion of the Bluetongue vector, Culicoides imicola, in continental France likely due to rare wind-transport events. Sci Rep. 2016 Jun 6;6:27247. doi: 10.1038/srep27247. PMID: 27263862; PMCID: PMC4893744.
+* Mignotte, A., Garros, C., Dellicour, S. et al. High dispersal capacity of Culicoides obsoletus (Diptera: Ceratopogonidae), vector of bluetongue and Schmallenberg viruses, revealed by landscape genetic analyses. Parasites Vectors 14, 93 (2021). https://doi.org/10.1186/s13071-020-04522-3
+
+
+
 *Where and when are these observational studies conducted? Is there a pattern of warmer temperatures (e.g. near the equator/ summer) corresponding with higher abundance of midges higher in the atmosphere? Are there thresholds to those heights that may also incorporate a change in midge behavior?*
 
 *Most projected species distribution models of insects only focus on habitat suitability... could we also incorporate projected changes in dispersal that correspond with atmospheric warming throughout the column and wind patterns? Do we know enough about how midges would respond behaviorally to these changes?*
