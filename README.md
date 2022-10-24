@@ -15,7 +15,7 @@ The wind distributions generally match with a novel, MaxEnt-derived spacies dist
 
 All of these runs are now stored in trajectory_total.csv file which we can use for visualizing (need to go beyond default package plot). I've also included a new column 'eucdistm' which measures the euclidean distance in meters from each start point to the progressive movement of the parcel. We can see how maximum distance varies e.g. from month to month. The longer distances usually correspond to time stamps furthest from the initial point (24h) and heighest in the atmosphere (200m).
 
-| Month | Maximum Euclidean Distance from start point (km) |
+| Month in 2018 | Maximum Euclidean Distance from start point (km) |
 | ----- | ------------------ |
 | June | 1,015 |
 | July | 841 |
