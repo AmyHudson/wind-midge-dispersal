@@ -35,6 +35,7 @@ Midges could potentially be mixing west and east with seasonal winds flowing wes
 
 *How would variability influence spread?*
 The white coloring in the above figure may indicate that there is high variability in wind direction over the 10 year time period here. For example, September 2018 had a lot more wind moving west than other years. That variability may promote cross-continental dispersal.
+
 ![](/figures/10m_uwnd_201809.jpg)
  
 
