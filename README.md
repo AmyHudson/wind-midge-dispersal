@@ -6,7 +6,7 @@ Here we explore the potential for the wind dispersal of insects (biting midges i
 
 *Culicoides sonorensis* are a known vector of VS and other livestock diseases such as Epizootic Hemorrhagic Disease and Blue Tongue. Some sampling sites have multiple *Culicoides* species present at different abundances. *Culicoides sonorensis* has a pretty wide distribution as environmental generalists in the United States, and their genetic makeup is similar enough to suggest that these populations travel large distances frequently (Shults et al. 2022 *Scientific Reports*). 
 
-We begin by taking cross-continental sampling locations of *Culicoides sonorensis* and modeling potential forward trajectories of air parcels in summer months (when insects are most active and abundant) at different heights in the atmosphere and different time window aggregates, to explore whether wind could be assisting interactions between geographically diverse populations at these known locations. For the summer months (June-September) in 2018 we explored trajectories where the midges would be in flight at 6am and 9pm, in the air for 3, 6, 12, and 24 hours, and at heights of 10m, 50m, 100m, and 200m. *These are starting heights- the parcels can travel much higher, so may need to constrain.* Temperature is likely the main height constraint and what drives the large variability we see in the observational record of finding midges in the air- there is no temperature output in the splitr package, but I could potentially convert the known height and pressure of the air parcel to temperature, or bring in a temperature data product.
+We begin by taking cross-continental sampling locations of *Culicoides sonorensis* and modeling potential forward trajectories of air parcels in summer months (when insects are most active and abundant) at different heights in the atmosphere and different time window aggregates, to explore whether wind could be assisting interactions between geographically diverse populations at these known locations. For the summer months (June-September) in 2018 we explored trajectories where the midges would be in flight at 6am and 9pm, in the air for 3, 6, 12, and 24 hours, and at heights of 10m, 50m, 100m, and 200m. Temperature is likely the main height constraint and what drives the large variability we see in the observational record of finding midges in the air- by setting the argument extended_met = TRUE , we're able to find the ambient air temperature, relative humidity, and a lot of other variables. *The midge-dispersal literature is pretty scattered in realistic physical constraints- we can constrain the maximum height air parcels can travel, and the temperature (maybe above 10 degrees C); removing points that don't meet parameters from visuals. Other figure edits could include: adding the Mississippi shapefile to the map; adding circles of set radiuses to each point (e.g. max euclidean distance at each starting height)* 
 
 ### September 2018 trajectories, where midges fly up to 200m and their location up to 24hrs later ###
 ![](/figures/midges_wind_24h_200m_September.png)
@@ -20,12 +20,12 @@ aggregate(trajectory_total$eucdistm,
           by = as.data.frame(trajectory_total$month), 
           FUN = max)
 ```
-| Month | Euclidean Distance (m) |
+| Month | Maximum Euclidean Distance from start point (km) |
 | ----- | ------------------ |
-| June | 813,595 |
-| July | 644,141 |
-| August | 835,745 |
-| September | 707,243 |
+| June | 1,015 |
+| July | 841 |
+| August | 868 |
+| September | 835 |
 
 *Are there times of year where wind could help move midges west to east, or east to west?
 How do the times of day influence those wind assists?*
