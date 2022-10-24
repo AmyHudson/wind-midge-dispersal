@@ -1,8 +1,8 @@
 # Any way the wind blows: exploring the physical wind dispersal of insects #
 
-Here we explore the potential for the wind dispersal of insects (biting midges in particular) with applications in disease ecology. This includes 1) describing the climatology of [wind dispersal](#wind-dispersal-climatology-from-sampled-vector-locations) events in locations where we have collected different biting midge species and 2) describing the [backwards wind trajectories](#backwards-wind-trajectories) leading up to an anomalous expansion of Vesicular Stomatitis to Kansas in 2020. We leverage the HYSPLIT model through the [splitr](https://rdocumentation.org/packages/SplitR/versions/0.4) package for these analyses, which defaults to the NCEP/NCAR reanalysis product. I also brought in the ERA5 reanalysis product.
+Here we explore the potential for the wind dispersal of insects (biting midges in particular) with applications in disease ecology. This includes 1) describing the climatology of [wind trajectory](#wind-trajectories-from-sampled-vector-locations) events in locations where we have collected different biting midge species and 2) describing the [backwards wind trajectories](#backwards-wind-trajectories) leading up to an anomalous expansion of Vesicular Stomatitis to Kansas in 2020. We leverage the HYSPLIT model through the [splitr](https://rdocumentation.org/packages/SplitR/versions/0.4) package for these analyses, which defaults to the NCEP/NCAR reanalysis product. I also brought in the ERA5 reanalysis product to explore the seasonality of westerly winds in the western US- to determine whether we get much easterly versus westerly movement and whether midge populations can interact frequently.
 
-## Wind dispersal climatology from sampled biting midge locations ##
+## Wind trajectories from sampled biting midge locations ##
 
 *Culicoides sonorensis* are a known vector of VS and other livestock diseases such as Epizootic Hemorrhagic Disease and Blue Tongue. Some sampling sites have multiple *Culicoides* species present at different abundances. *Culicoides sonorensis* has a pretty wide distribution as environmental generalists in the United States, and their genetic makeup is similar enough to suggest that these populations travel large distances frequently (Shults et al. 2022 *Scientific Reports*). 
 
@@ -22,8 +22,11 @@ All of these runs are now stored in trajectory_total.csv file which we can use f
 | August | 868 |
 | September | 835 |
 
-We've used NCEP/NCAR reanalysis data here (2.5°grid), but GDAS data (1°) can be used with `met_type = "gdas1"`, or NARR (North American Regional Reanalysis- 32km) data with `met_type = "narr"`. It may be interesting to see the differences in results between them. We can also explore how dispersal modeling compares with the trajectory modeling.
+We've used NCEP/NCAR reanalysis data here (2.5°grid), but GDAS data (1°) can be used with `met_type = "gdas1"`, or NARR (North American Regional Reanalysis- 32km) data with `met_type = "narr"`. It may be interesting to see the differences in results between them. Dispersal model also has `met_type = "gdas0.5"` (Global Data Assimilation System 0.5-degree resolution data), "gfs0.25" (Global Forecast System 0.25 degree data), and "nam12" (North American Mesoscale Forecast System, 12-km/6-hour resolution data)- I think we can also use these in the trajectory analyses.
 
+We can also explore how dispersal modeling compares with the trajectory modeling- dispersal lets us look at particle size, but also requires us to think about how frequently particles are being emitted, their size, and their density... may be beyond this scope. Need to convert ~several thousand adults per square yard -> g/cm3...
+
+## Zonal wind climatologies in the western US ##
 *Are there times of year where wind could help move midges west to east, or east to west?
 How do the times of day influence those wind assists?*
 
@@ -33,7 +36,6 @@ Blues indicate wind moving from east to west, reds indicate wind moving west to 
 Midges could potentially be mixing west and east with seasonal winds flowing west (blue shades) at the surface (e.g. in late spring, early summer), and then easily moving east if getting high enough up in atmosphere in nearly every month. 
 
 ![](/figures/era5uwndclimatology.png)
-
 
 *How would variability influence spread?*
 The white coloring in the above figure may indicate that there is high variability in wind direction over the 10 year time period here. For example, September 2018 had a lot more wind moving west than other years (figure below). That variability may promote cross-continental dispersal.
@@ -72,16 +74,16 @@ Other papers to check out:
 
 *Most projected species distribution models of insects only focus on habitat suitability... could we also incorporate projected changes in dispersal that correspond with atmospheric warming throughout the column and wind patterns? Do we know enough about how midges would respond behaviorally to these changes?*
 
-## Backwards wind trajectories ##
+## Backwards wind trajectories from the 2020 VS outbreak in Kansas##
 
-VS infection was reported on June 1 in Kansas. We examined the backwards wind trajectories (from the NCEP reanalysis product) for 6-20 days before the reported VS occurance to account for both a delay in reporting as well as time for an infected vector to bite the animal and the animal to show symptoms. 05/12 (light trajectories) to 05/26 (dark) where every node is the air parcel location every 2 hours up to 120 hours (5 days). We also subset the temperature ≥ 10 °C. We explored at different heights in the atmosphere as identified by previous literature (some based on finding insects at that height).
+A VS case was reported on June 1, 2020 in Kansas leading to a subsequent outbreak in the region. We examined the backwards wind trajectories (from the NCEP reanalysis product) for 6-20 days before the reported VS occurance to account for both a delay in reporting as well as time for an infected vector to bite the animal and the animal to show symptoms. 05/12 (light trajectories) to 05/26 (dark) where every node is the air parcel location every 2 hours up to 120 hours (5 days). We also subset the temperature ≥ 10 °C. We explored at different heights in the atmosphere as identified by previous literature (some based on finding insects at that height).
 
 We found it was most likely that the Kansas expansion, if dispersed by wind, was from the Texas or New Mexico regions based on the prevailing winds and locations where there may have been enough infected insect vectors. We could also examine lower heights- in 2019 there was a case in eastern Kansas and could have potentially spread via wind at lower altitudes, or black fly flight along water channels.
 
 ![](/figures/vs_wind_2020.png)
 
 Future Directions:
-It would potentially be valuable to see the infected premises as a layer on this map? Or, more accurately, large enough populations of viable insect vectors. It would also be good to take surface climate into consideration and masking out paths- we know cold fronts can indicate the riding and dropping of these air parcels.
+It would potentially be valuable to see the infected premises as a layer on this map? Those infected premises may designate a large enough population of viable insect vectors. It would also be good to take surface climate into consideration and masking out paths- we know cold fronts can indicate the riding and dropping of these air parcels.
 
 
 ### Other Notes ###
