@@ -22,12 +22,12 @@ All of these runs are now stored in trajectory_total.csv file which we can use f
 | August | 868 |
 | September | 835 |
 
-We've used NCEP reanalysis data here, but GDAS data can be used with met_type = "gdas1" and NARR (North American Regional Reanalysis) data with met_type = "narr". We can also explore how dispersal modeling compares with the trajectory modeling.
+We've used NCEP/NCAR reanalysis data here (2.5°grid), but GDAS data (1°) can be used with met_type = "gdas1". We can also explore how dispersal modeling compares with the trajectory modeling.
 
 *Are there times of year where wind could help move midges west to east, or east to west?
 How do the times of day influence those wind assists?*
 
-Using another reanalysis product (ERA-5, 1979-present, global) we examined  the climatology of zonal wind (U component, east/west movement) over the period of 2010-2019 for -124.50E to -92.75E and 35.50N to 45.50N. I’ve averaged across years and then zonally averaged the windspeed across latitude grids to show how, as we move across longitudes at different points in the atmosphere, this is what zonal wind looks like. Y axis is atmosphere levels, surface (1000hPa) to ~2500 meters above sea level (750hPa). Rows are months and columns are times of day from 4am to 9pm.
+Using another reanalysis product (ERA-5, 1979-present, 30km grid) we examined  the climatology of zonal wind (U component, east/west movement) over the period of 2010-2019 for -124.50E to -92.75E and 35.50N to 45.50N. I’ve averaged across years and then zonally averaged the windspeed across latitude grids to show how, as we move across longitudes at different points in the atmosphere, this is what zonal wind looks like. Y axis is atmosphere levels, surface (1000hPa) to ~2500 meters above sea level (750hPa). Rows are months and columns are times of day from 4am to 9pm.
 The Rockies are around 4,000m at peaks (at around -110E) but Saunders et al. 1990 mention midges being found at max of 3,500m, after which it would likely be too cold. Air parcels could flow around these mountain peaks. 
 Blues indicate wind moving from east to west, reds indicate wind moving west to east, and magnitude is windspeed (m/s).
 Midges could potentially be mixing west and east with seasonal winds flowing west (blue shades) at the surface (e.g. in late spring, early summer), and then easily moving east if getting high enough up in atmosphere in nearly every month. 
@@ -90,4 +90,4 @@ It would potentially be valuable to see the infected premises as a layer on this
 * Monsoonal winds can promote insect dispersal- implying a seasonality to dispersal events (Baker et al. 1990 Simulium spp)
 * Braverman and Chechik, 1996
 * C sonorensis have a 30 day life cycle, with potentially 5-12 generations per year depending on temperature thresholds
-* Used [grip](https://github.com/joeyespo/grip) to print this readme.md to pdf- cd to repo, grip, open on chrome, and print as pdf
+* To print this readme.md file as a pdf for collaborators: Use [grip](https://github.com/joeyespo/grip) to print this readme.md to pdf- cd to repo, grip, open on chrome, and print as pdf
