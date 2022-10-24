@@ -26,21 +26,24 @@ trajectory <-
   hysplit_trajectory(
     lat = pts$Lat,
     lon = pts$Long,
-    height = j,
+    height = hgt[j],
     duration = 24,
     days = seq(
       lubridate::ymd(paste("2018-",i,"-01", sep = "")),
       lubridate::ymd(paste("2018-",i,"-30", sep = "")),
       by = "2 day"
     ),
-    daily_hours = c(6,21)
+    daily_hours = c(6,21),
+    direction = "forward",
+    met_type = "reanalysis",
+    extended_met = TRUE
   )
 
 trajectory$month <- month.name[i]
 trajectory$maxhgt <- hgt[j]
 
 mapshot(trajectory_plot(trajectory), 
-        file = paste("figures/midges_wind_24h_", hgt[j],"m_",month.name[i],".pdf", sep = ""))
+        file = paste("figures/midges_wind_24h_", hgt[j],"m_",month.name[i],".png", sep = ""))
 
 trajectory_total <- rbind(trajectory_total,trajectory)
 
@@ -81,10 +84,14 @@ aggregate(trajectory_total$eucdistm,
           by = as.data.frame(trajectory_total$month), 
           FUN = max)
 
-#write.csv(trajectory_total, "data/trajectory_total.csv", row.names = F)
-#trajectory_total <- read.csv("data/trajectory_total.csv")
+# add temperature of parcel
+# add wind speed?
+# what is the height measured at?
 
-p1 <- trajectory_plot(trajectory_total[which(trajectory_total$month == "June" &
+write.csv(trajectory_total, "data/trajectory_total.csv", row.names = F)
+trajectory_total <- read.csv("data/trajectory_total.csv")
+
+trajectory_plot(trajectory_total[which(trajectory_total$month == "June" &
                                                trajectory_total$maxhgt == 10),])
 library(cowplot)
 plot_grid(p1)
