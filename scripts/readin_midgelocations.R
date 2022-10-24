@@ -88,7 +88,7 @@ aggregate(trajectory_total$eucdistm,
 # add wind speed?
 # what is the height measured at?
 
-write.csv(trajectory_total, "data/trajectory_total.csv", row.names = F)
+#write.csv(trajectory_total, "data/trajectory_total.csv", row.names = F)
 trajectory_total <- read.csv("data/trajectory_total.csv")
 
 trajectory_plot(trajectory_total[which(trajectory_total$month == "June" &
