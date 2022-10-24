@@ -22,6 +22,8 @@ All of these runs are now stored in trajectory_total.csv file which we can use f
 | August | 868 |
 | September | 835 |
 
+We've used NCEP reanalysis data here, but GDAS data can be used with met_type = "gdas1" and NARR (North American Regional Reanalysis) data with met_type = "narr". We can also explore how dispersal modeling compares with the trajectory modeling.
+
 *Are there times of year where wind could help move midges west to east, or east to west?
 How do the times of day influence those wind assists?*
 
@@ -34,10 +36,12 @@ Midges could potentially be mixing west and east with seasonal winds flowing wes
 
 
 *How would variability influence spread?*
-The white coloring in the above figure may indicate that there is high variability in wind direction over the 10 year time period here. For example, September 2018 had a lot more wind moving west than other years. That variability may promote cross-continental dispersal.
+The white coloring in the above figure may indicate that there is high variability in wind direction over the 10 year time period here. For example, September 2018 had a lot more wind moving west than other years (figure below). That variability may promote cross-continental dispersal.
 
 ![](/figures/10m_uwnd_201809.jpg)
  
+The NCEI NOAA group provides nice maps like the one above exploring [wind climatology in the United States](https://www.ncei.noaa.gov/access/monitoring/wind/) using NCEP-DOE Reanalysis 2 wind data (Kanamitsu et al. 2002).
+
 
 **References and notes:**
 
