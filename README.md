@@ -11,7 +11,7 @@ We begin by taking cross-continental sampling locations of *Culicoides sonorensi
 ### September 2018 trajectories, where midges fly up to 200m and their location up to 24hrs later ###
 ![](/figures/midges_wind_24h_200m_September.png)
 
-The wind distributions generally match with a novel, MaxEnt-derived spacies distribution model of *C. sonorensis* developed by Melanie and Brian, which we can add here as a baselayer, with observed locations plotted.
+The wind distributions generally match with a novel, MaxEnt-derived spacies distribution model of *C. sonorensis* being developed, which we can add here as a baselayer, with observed locations plotted.
 
 All of these runs are now stored in trajectory_total.csv file which we can use for visualizing (need to go beyond default package plot). I've also included a new column 'eucdistm' which measures the euclidean distance in meters from each start point to the progressive movement of the parcel. We can see how maximum distance varies e.g. from month to month. The longer distances usually correspond to time stamps furthest from the initial point (24h) and heighest in the atmosphere (200m).
 
@@ -22,7 +22,7 @@ All of these runs are now stored in trajectory_total.csv file which we can use f
 | August | 868 |
 | September | 835 |
 
-We've used NCEP/NCAR reanalysis data here (2.5°grid), but GDAS data (1°) can be used with met_type = "gdas1". We can also explore how dispersal modeling compares with the trajectory modeling.
+We've used NCEP/NCAR reanalysis data here (2.5°grid), but GDAS data (1°) can be used with `met_type = "gdas1"`, or NARR (North American Regional Reanalysis- 32km) data with `met_type = "narr"`. It may be interesting to see the differences in results between them. We can also explore how dispersal modeling compares with the trajectory modeling.
 
 *Are there times of year where wind could help move midges west to east, or east to west?
 How do the times of day influence those wind assists?*
