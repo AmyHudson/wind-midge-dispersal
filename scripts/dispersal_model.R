@@ -1,30 +1,57 @@
-# have trajectories; working on whether dispersal modeling would be better
+# dispersal modeling for the 
+
+#From Phillip
+#Attached is the collection data and GPS coordinates for the 3-year population study in California.
+#Also the sonorensis paper lists the mean weight of an unfed midge to be 0.2501 + 0.058 (range: 0.14 - 0.37)
+    #which sonorensis paper?
+
 
 #devtools::install_github("rich-iannone/splitr")
 
 library(splitr)
 library(lubridate)
 library(here)
+library(magrittr)
 #################
-# Create the `dispersion_model` object, add
-# a grid of starting locations, add run
-# parameters, and then execute the model run
+dispersion_model <-
+  create_dispersion_model() %>%
+  add_source(
+    name = "particle",
+    lat = 33.99, lon = -117.60, height = 50,
+    rate = 5, pdiam = 15, density = 1.5, shape_factor = 0.8,
+    release_start = lubridate::ymd_hm("2018-09-15 05:00"),
+    release_end = lubridate::ymd_hm("2018-09-15 05:00") + lubridate::hours(4)
+  ) %>%
+  add_dispersion_params(
+    start_time = lubridate::ymd_hm("2018-09-15 05:00"),
+    end_time = lubridate::ymd_hm("2018-09-15 05:00") + lubridate::hours(24),
+    direction = "forward", 
+    met_type = "reanalysis"
+  ) %>%
+  run_model()
+
+# Get a tibble containing the model results
+dispersion_tbl <- dispersion_model %>% get_output_tbl()
+
+# Plot particle data onto a map
+dispersion_model %>% dispersion_plot()
+
+
+#################
 dispersion_model <-
   create_dispersion_model() %>%
   add_source(
     name = "particle",
     lat = 49.0, lon = -123.0, height = 50,
-    rate = 5, pdiam = 1000, density = 1.5, shape_factor = 0.8,
-    release_start = lubridate::ymd_hm("2018-07-01 00:00"),
-    release_end = lubridate::ymd_hm("2018-07-01 00:00") + lubridate::hours(2)
+    rate = 5, pdiam = 15, density = 1.5, shape_factor = 0.8,
+    release_start = lubridate::ymd_hm("2015-07-01 00:00"),
+    release_end = lubridate::ymd_hm("2015-07-01 00:00") + lubridate::hours(2)
   ) %>%
   add_dispersion_params(
-    start_time = lubridate::ymd_hm("2018-07-01 00:00"),
-    end_time = lubridate::ymd_hm("2018-07-01 00:00") + lubridate::hours(6),
+    start_time = lubridate::ymd_hm("2015-07-01 00:00"),
+    end_time = lubridate::ymd_hm("2015-07-01 00:00") + lubridate::hours(6),
     direction = "forward", 
-    met_type = "reanalysis"#,
-    #met_dir = here::here("met"),
-    #exec_dir = here::here("out")
+    met_type = "reanalysis",
   ) %>%
   run_model()
 
