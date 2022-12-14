@@ -16,7 +16,7 @@ library(mapview)
 
 
 #################
-# rate of 5 mass units per hour
+# rate of XX mass units per hour
 
 # density (in grams per cubic centimeter) 
 
