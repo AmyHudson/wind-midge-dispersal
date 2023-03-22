@@ -17,14 +17,14 @@ hgt <- c(10,50,100,200)
 
 trajectory_total <- data.frame()
 
-for (i in 6:9){
-  for (j in 1:4){
+for (i in 6:9){ #month
+  for (j in 1:4){ #height
     
     trajectory <-
       hysplit_trajectory(
         lat = pts$Lat,
         lon = pts$Long,
-        height = hgt[j],
+        height = hgt[j],#j
         duration = 24,
         days = seq(
           lubridate::ymd(paste("2018-",i,"-01", sep = "")),
@@ -32,16 +32,16 @@ for (i in 6:9){
           by = "2 day"
         ),
         daily_hours = c(6,21),
-        direction = "forward",
+        direction = "backward", #forward
         met_type = "reanalysis",
         extended_met = TRUE
       )
     
-    trajectory$month <- month.name[i]
-    trajectory$maxhgt <- hgt[j]
+    trajectory$month <- month.name[i]#i
+    trajectory$maxhgt <- hgt[j]#j
     
     mapshot(trajectory_plot(trajectory), 
-            file = paste("figures/midges_wind_24h_", hgt[j],"m_",month.name[i],".png", sep = ""))
+            file = paste("figures/trajectory_backward_24h_2018", hgt[j],"m_",month.name[i],".pdf", sep = ""))
     #orange to blue to pink advance in time
     
     trajectory_total <- rbind(trajectory_total,trajectory)
@@ -85,6 +85,8 @@ aggregate(trajectory_total$eucdistm,
 # what is the height measured at?
 
 #write.csv(trajectory_total, "data/trajectory_total.csv", row.names = F)
+write.csv(trajectory_total, "data/trajectory_total_backward.csv", row.names = F)
+
 trajectory_total <- read.csv("data/trajectory_total.csv")
 
 trajectory_plot(trajectory_total[which(trajectory_total$month == "June" &

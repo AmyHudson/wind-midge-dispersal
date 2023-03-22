@@ -1,4 +1,12 @@
-# dispersal modeling for the 
+# dispersal modeling at California site based on derived parameter distributions
+
+This run has been set to be modeled for 6 h. The starting location of 49.0ºN and 123.0ºW is set using lat = 49.0 and lon = -123.0; the starting height of 50 m above ground level is set by height = 50. The meteorological options include the type of met data to use (global NCEP Reanalysis data is used here with met_type = "reanalysis).
+
+A single emissions species is set to be emitted (using add_source()) for 2 hours at an emission rate of 5 mass units per hour (rate = 5). 
+Emissions begin at the same time as the start of the model (release_start = lubridate::ymd_hm("2015-07-01 00:00")). 
+particle diameter (in micrometers), 
+density (in grams per cubic centimeter) 
+shape factor (value from 0 to 1)
 
 #From Phillip
 #Attached is the collection data and GPS coordinates for the 3-year population study in California.
