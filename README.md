@@ -76,7 +76,7 @@ Table: For start times: 6 and 9; duration: 3, 6, 12, 24hrs,start height: 10m, 50
 
 *Most projected species distribution models of insects only focus on habitat suitability... could we also incorporate projected changes in dispersal that correspond with atmospheric warming throughout the column and wind patterns? Do we know enough about how midges would respond behaviorally to these changes?*
 
-## Backwards wind trajectories from the 2020 VS outbreak in Kansas##
+## Backwards wind trajectories from the 2020 VS outbreak in Kansas
 
 A VS case was reported on June 1, 2020 in Kansas leading to a subsequent outbreak in the region. We examined the backwards wind trajectories (from the NCEP reanalysis product) for 6-20 days before the reported VS occurance to account for both a delay in reporting as well as time for an infected vector to bite the animal and the animal to show symptoms. 05/12 (light trajectories) to 05/26 (dark) where every node is the air parcel location every 2 hours up to 120 hours (5 days). We also subset the temperature ≥ 10 °C. We explored at different heights in the atmosphere as identified by previous literature (some based on finding insects at that height).
 
