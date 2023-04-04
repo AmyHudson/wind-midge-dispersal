@@ -39,7 +39,7 @@ dispersion_model <-
     start_time = lubridate::ymd_hm("2015-07-01 00:00"),
     end_time = lubridate::ymd_hm("2015-07-01 00:00") + lubridate::hours(6),
     direction = "forward", 
-    met_type = "reanalysis",
+    met_type = "reanalysis"#,
     #met_dir = here::here("met"),
     #exec_dir = here::here("out")
   ) %>%
