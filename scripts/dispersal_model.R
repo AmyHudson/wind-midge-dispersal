@@ -1,8 +1,9 @@
-#NOT RUNNING DEFAULT SCRIPT 3/23- try another default script??
 
 # Dispersal modeling at California site based on derived parameter distributions
 
 # Default model parameters and explanations: This run has been set to be modeled for 6 h. The starting location of 49.0ºN and 123.0ºW is set using lat = 49.0 and lon = -123.0; the starting height of 50 m above ground level is set by height = 50. The meteorological options include the type of met data to use (global NCEP Reanalysis data is used here with met_type = "reanalysis).
+
+#height: tallest Oak tree= 35m; Douglas fir= 67m; Giant sequoia 84m; Coastal redwood= 116m
 
 # A single emissions species is set to be emitted (using add_source()) for 2 hours at an emission rate of 5 mass units per hour (rate = 5). 
 # Emissions begin at the same time as the start of the model (release_start = lubridate::ymd_hm("2015-07-01 00:00")). 
@@ -24,6 +25,7 @@ library(here)
 library(magrittr)
 library(mapview)
 #################
+#default works
 dispersion_model <-
   create_dispersion_model() %>%
   add_source(
@@ -62,13 +64,13 @@ dispersion_model <-
 
 
 
-
+#nam12 wasn't working, but could have been my internet connection
 
 dispersion_model <-
   create_dispersion_model() %>%
   add_source(
     name = "particle",
-    lat = 34.0, lon = -117.5, height = 10,
+    lat = 34.0, lon = -117.5, height = 65,
     #rate = 5, pdiam = 15, density = 1.5, shape_factor = 0.8,
     release_start = lubridate::ymd_hm("2018-09-10 17:00"),
     release_end = lubridate::ymd_hm("2018-09-10 17:00") + lubridate::hours(1)
@@ -77,7 +79,7 @@ dispersion_model <-
     start_time = lubridate::ymd_hm("2018-09-10 17:00"),
     end_time = lubridate::ymd_hm("2018-09-10 17:00") + lubridate::hours(2),
     direction = "forward", 
-    met_type = "nam12",
+    met_type = "reanalysis",
   ) %>%
   run_model()
 
@@ -86,7 +88,7 @@ dispersion_tbl <- dispersion_model %>% get_output_tbl()
 
 # Plot particle data onto a map
 p <- dispersion_model %>% dispersion_plot()
-
+p
 #remotes::install_github("r-spatial/mapview")
 mapviewOptions(fgb = FALSE)
 remotes::install_github('rstudio/rmarkdown')
