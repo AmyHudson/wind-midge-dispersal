@@ -70,17 +70,17 @@ dispersion_model <-
   create_dispersion_model() %>%
   add_source(
     name = "particle",
-    lat = 34.0, lon = -117.5, height = 65,
-    #rate = 5, pdiam = 15, density = 1.5, shape_factor = 0.8,
-    release_start = lubridate::ymd_hm("2018-09-10 17:00"),
-    release_end = lubridate::ymd_hm("2018-09-10 17:00") + lubridate::hours(1)
+    lat = 34.0, lon = -117.5, height = 50,
+    rate = 5, pdiam = 15, density = 1.5, shape_factor = 0.8,
+    release_start = lubridate::ymd_hm("2018-09-10 04:00"),
+    release_end = lubridate::ymd_hm("2018-09-10 04:00") + lubridate::hours(4)
   ) %>%
-  add_dispersion_params(
-    start_time = lubridate::ymd_hm("2018-09-10 17:00"),
-    end_time = lubridate::ymd_hm("2018-09-10 17:00") + lubridate::hours(2),
-    direction = "forward", 
-    met_type = "reanalysis",
-  ) %>%
+  # add_dispersion_params(
+  #   start_time = lubridate::ymd_hm("2018-09-10 04:00"),
+  #   end_time = lubridate::ymd_hm("2018-09-10 04:00") + lubridate::hours(6),
+  #   direction = "forward", 
+  #   met_type = "reanalysis",
+  # ) %>%
   run_model()
 
 # Get a tibble containing the model results
