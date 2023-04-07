@@ -4,6 +4,9 @@
 # Default model parameters and explanations: This run has been set to be modeled for 6 h. The starting location of 49.0ºN and 123.0ºW is set using lat = 49.0 and lon = -123.0; the starting height of 50 m above ground level is set by height = 50. The meteorological options include the type of met data to use (global NCEP Reanalysis data is used here with met_type = "reanalysis).
 
 #height: tallest Oak tree= 35m; Douglas fir= 67m; Giant sequoia 84m; Coastal redwood= 116m
+#height: 0-60 lognormal
+
+#rate = 
 
 # A single emissions species is set to be emitted (using add_source()) for 2 hours at an emission rate of 5 mass units per hour (rate = 5). 
 # Emissions begin at the same time as the start of the model (release_start = lubridate::ymd_hm("2015-07-01 00:00")). 
@@ -75,12 +78,12 @@ dispersion_model <-
     release_start = lubridate::ymd_hm("2018-09-10 04:00"),
     release_end = lubridate::ymd_hm("2018-09-10 04:00") + lubridate::hours(4)
   ) %>%
-  # add_dispersion_params(
-  #   start_time = lubridate::ymd_hm("2018-09-10 04:00"),
-  #   end_time = lubridate::ymd_hm("2018-09-10 04:00") + lubridate::hours(6),
-  #   direction = "forward", 
-  #   met_type = "reanalysis",
-  # ) %>%
+  add_dispersion_params(
+    start_time = lubridate::ymd_hm("2018-09-10 04:00"),
+    end_time = lubridate::ymd_hm("2018-09-10 04:00") + lubridate::hours(6),
+    direction = "forward",
+    met_type = "reanalysis",
+  ) %>%
   run_model()
 
 # Get a tibble containing the model results

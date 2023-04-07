@@ -13,7 +13,7 @@ library(here)
 library(mapview)
 
 
-hgt <- c(10,50,100,200)
+hgt <- c(10,50,100,200) #m above ground level
 
 trajectory_total <- data.frame()
 
@@ -31,7 +31,7 @@ for (i in 6:9){ #month
           lubridate::ymd(paste("2018-",i,"-30", sep = "")),
           by = "2 day"
         ),
-        daily_hours = c(6,21),
+        daily_hours = c(6,21), #play with this C(4,5,6,7,19,20,21,22)
         direction = "backward", #forward
         met_type = "reanalysis",
         extended_met = TRUE
@@ -87,9 +87,25 @@ aggregate(trajectory_total$eucdistm,
 #write.csv(trajectory_total, "data/trajectory_total.csv", row.names = F)
 write.csv(trajectory_total, "data/trajectory_total_backward.csv", row.names = F)
 
-trajectory_total <- read.csv("data/trajectory_total.csv")
+trajectory_total <- read.csv("data/trajectory_total_backward.csv") %>%
+  group_by(run, receptor) %>%
+  mutate(lonend = lag(lon),
+         latend = lag(lat))
 
 trajectory_plot(trajectory_total[which(trajectory_total$month == "June" &
                                          trajectory_total$maxhgt == 10),])
+
+library(ggplot2)
+trajectory_total %>%
+  group_by(run, receptor) %>%
+  ggplot()+
+  geom_segment(aes(x = lon, y = lat))
+
+library(maps)
+ggplot(trajectory_total, aes(lon, lat)) +
+  geom_segment(aes(xend = lonend, yend = latend),
+               arrow = arrow(length = unit(0.1,"cm"))) +
+  borders("state")
+
 library(cowplot)
 plot_grid(p1)
