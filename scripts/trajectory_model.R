@@ -1,3 +1,6 @@
+# add scale bar to maps
+# https://stackoverflow.com/questions/63459419/add-a-scale-bar-to-a-ggplot-map-that-has-been-scaled-using-coord-sf
+
 source("scripts/readin_midgelocations.R")
 
 # forward trajectory modeling using splitr
