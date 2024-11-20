@@ -67,6 +67,8 @@ Other papers to check out:
 * Ducheyne, E., De Deken, R., Bécu, S., Codina, B., Nomikou, K., Mangana-Vougiaki, O., Georgiev, G., Purse, B., & Hendrickx, G. (2007). Quantifying the wind dispersal of Culicoides species in Greece and Bulgaria. Geospatial Health, 1(2), 177–189. https://doi.org/10.4081/gh.2007.266
 * Jacquet S, Huber K, Pagès N, Talavera S, Burgin LE, Carpenter S, Sanders C, Dicko AH, Djerbal M, Goffredo M, Lhor Y, Lucientes J, Miranda-Chueca MA, Pereira Da Fonseca I, Ramilo DW, Setier-Rio ML, Bouyer J, Chevillon C, Balenghien T, Guis H, Garros C. Range expansion of the Bluetongue vector, Culicoides imicola, in continental France likely due to rare wind-transport events. Sci Rep. 2016 Jun 6;6:27247. doi: 10.1038/srep27247. PMID: 27263862; PMCID: PMC4893744.
 * Mignotte, A., Garros, C., Dellicour, S. et al. High dispersal capacity of Culicoides obsoletus (Diptera: Ceratopogonidae), vector of bluetongue and Schmallenberg viruses, revealed by landscape genetic analyses. Parasites Vectors 14, 93 (2021). https://doi.org/10.1186/s13071-020-04522-3
+* [Assessing the Risk of Windborne Dispersal of Culicoides Midges in Emerging Epizootic Hemorrhagic Disease Virus Outbreaks in France](https://doi.org/10.1155/2024/5571195)
+  *[Long-distance wind dispersal of Culicoides from EHDV-infected areas in France](https://doi.org/10.57745/X9FWAG)
 
 *Does terrain roughness cause parcels to drop? Can include surface height- an output of extended_met.* 
 Table: For start times: 6 and 9; duration: 3, 6, 12, 24hrs,start height: 10m, 50m, 100, 200m; list mean distance traveled for each of these parameters, and temperature
